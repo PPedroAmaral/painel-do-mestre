@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🐉 Painel do Mestre (SaaS para RPG)
 
-## Getting Started
+[![Deploy com Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)]([COLE_SEU_LINK_DA_VERCEL_AQUI](https://painel-do-mestre.vercel.app/))
+[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 
-First, run the development server:
+![Demonstração do Painel do Mestre](./public/Captura%20de%20tela%202026-03-07%20202459.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Um sistema completo de gerenciamento de campanhas de RPG de mesa (Tabletop RPG), desenvolvido para auxiliar Mestres a controlar combates, vida dos jogadores e consultar bestiários em tempo real.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este projeto foi construído para demonstrar habilidades avançadas de engenharia de software no desenvolvimento Full-Stack, indo muito além de uma interface estática.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🎯 Desafios Técnicos Resolvidos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este projeto foi desenhado para cobrir 5 pilares fundamentais do desenvolvimento moderno:
 
-## Learn More
+* **🗄️ Banco de Dados & SQL (Supabase/PostgreSQL):** Modelagem de banco de dados relacional (Campanhas, Personagens, Logs de Combate). Implementação de um CRUD completo conectado diretamente ao Next.js.
+* **📊 Dashboards e Relatórios (Recharts):** Conversão de dados brutos do banco de dados em um dashboard interativo, calculando total de dano causado e cura realizada por sessão.
+* **🌐 Integração de Sistemas via API (Fetch):** Consumo em tempo real da `D&D 5e API` para buscar atributos de monstros dinamicamente.
+* **🤖 Automações (Webhooks):** Integração nativa com o Discord. O sistema formata os dados da sessão (incluindo baixas em combate) e dispara uma requisição POST formatada (Embed) para notificar os jogadores.
+* **⚙️ Regras de Negócio em JavaScript:** Lógica complexa de estado (State Management) para calcular porcentagens de HP, e um sistema algorítmico de "Testes de Morte" (Death Saves) com contadores de sucessos, falhas e alteração de status visual (Morto/Vivo).
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Funcionalidades
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Gestão de Combate:** Adicione danos e curas, e veja a barra de HP (e as cores) mudarem em tempo real.
+- **Sistema de Testes de Morte:** Quando um jogador cai a 0 HP, uma interface de rolagem de morte é ativada. Com 3 falhas, o personagem é permanentemente marcado como morto e perde a cor no painel.
+- **Bestiário Dinâmico:** Barra de pesquisa que consome uma API externa para trazer atributos de monstros (AC, HP) instantaneamente.
+- **Relatório no Discord:** Envio automático do resumo da sessão com um clique, identificando quem mais deu dano e reportando mortes na equipe.
+- **Dark/Light Mode:** Alternância de temas fluida construída com Tailwind CSS.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Tecnologias Utilizadas
 
-## Deploy on Vercel
+* **Front-end:** Next.js (App Router), React, Tailwind CSS v4.
+* **Back-end/BaaS:** Supabase (PostgreSQL).
+* **Gráficos:** Recharts.
+* **APIs Externas:** D&D 5e API, Discord Webhooks API.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Como rodar localmente
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone o repositório: `git clone https://github.com/SEU_USUARIO/painel-do-mestre.git`
+2. Instale as dependências: `npm install`
+3. Crie um arquivo `.env.local` na raiz e adicione suas variáveis do Supabase:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=sua_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=sua_chave
+4. Inicie o servidor: npm run dev
+
+Desenvolvido por Pedro Amaral.
