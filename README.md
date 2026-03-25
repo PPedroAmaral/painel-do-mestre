@@ -1,6 +1,6 @@
 # 🐉 Painel do Mestre (SaaS para RPG)
 
-[![Deploy com Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)]([COLE_SEU_LINK_DA_VERCEL_AQUI](https://painel-do-mestre.vercel.app/))
+[![Deploy com Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)]([https://painel-do-mestre.vercel.app/](https://painel-do-mestre.vercel.app/))
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 
